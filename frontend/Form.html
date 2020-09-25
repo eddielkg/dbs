@@ -6,7 +6,7 @@
       <!-- jQuery Validation Plugin -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
       <!-- Form Validation (JS) -->
-      <script src="js/form-validation.js"></script>
+      <!-- <script src="js/form-validation.js"></script> -->
       <!-- Stylesheet -->
       <link rel="stylesheet" type="text/css" href="style.css">
 </head>
@@ -51,7 +51,7 @@
                   <!-- <input type='file' />
             <br><img id="myImg" src="#" alt="your image" height=200 width=100> -->
                   <div class="container">
-                        <button type="submit">Submit</button>
+                        <button type="submit" name="submit">Submit</button>
                   </div>
 
                   <div class="container" style="background-color:#f1f1f1">
@@ -81,6 +81,46 @@
       //       el.value = opt;
       //       select.appendChild(el);
       // }​
+</script>
+<script>
+      $(document).ready(function () {
+            $("button[name='submit']").click(function () {
+                  var customerName = $("input[name='CName']").val();
+                  var customerAge = $("input[name='CAge']").val();
+                  var serviceOfficerName = $("input[name='Ser_off_name']").val();
+                  var NRIC = $("input[name='NRIC']").val();
+                  var regTime = document.getElementById("regTime").innerHTML
+                  var branchCode = $("input[name='branchCode']").val();
+                  var productType = $("input[name='productType']").val();
+                  $.ajax({
+                        type: 'POST',
+                        url: 'http://techtrek2020.ap-southeast-1.elasticbeanstalk.com/login',
+                        data: {
+                              customerName: customerName,
+                              customerAge: customerAge,
+                              serviceOfficerName: serviceOfficerName,
+                              NRIC: NRIC,
+                              registrationTime: regTime,
+                              branchCode: branchCode,
+                              productType: []
+                  },
+                        statusCode: {
+                              400: function () {
+                                    alert('Error: 400 \nMissing username or password.');
+                              },
+                              401: function () {
+                                    alert('Error: 401 \nUsername and password does not match.');
+                              },
+                              500: function () {
+                                    alert('Error: 500 \nInternal Server Error.');
+                              }
+                        },
+                        success: function (response) {
+                              alert('Successful login\n');
+                        }
+                  });
+            });
+      });
 </script>
 
 <!-- <script type="text/javascript">
