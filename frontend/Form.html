@@ -46,6 +46,11 @@
                         <!-- <input type="text" placeholder="Product Type" name="productType" required> -->
                         <select id="productType" name="productType">
                               <option>Choose a Product Type</option>
+                              <option value="137">Investor</option>
+                              <option value="070">Insurance</option>
+                              <option value="291">Loans</option>
+                              <option value="969">Savings</option>
+                              <option value="555">Credit Cards</option>
                         </select>
                   </div>
                   <!-- <input type='file' />
@@ -69,18 +74,22 @@
       // Registration DateTime
       var dt = new Date();
       document.getElementById("regTime").innerHTML = (("0" + dt.getDate()).slice(-2)) + "/" + (("0" + (dt.getMonth() + 1)).slice(-2)) + "/" + (dt.getFullYear()) + " " + (("0" + dt.getHours() + 1).slice(-2)) + ":" + (("0" + dt.getMinutes() + 1).slice(-2)) + ":" + (("0" + dt.getSeconds() + 1).slice(-2));
-
+</script>
+<script>
       // Product Type
-      // var select = document.getElementById("productType");
-      // var options = ["Investor", "Insurance", "Loans", "Savings", "Credit Cards"];
+//       var select = document.getElementById("productType");
+//       var options = ["Investor", "Insurance", "Loans", "Savings", "Credit Cards"];
+//       var values = ["137", "070", "291", "969", "555"];
 
-      // for (var i = 0; i < options.length; i++) {
-      //       var opt = options[i];
-      //       var el = document.createElement("option");
-      //       el.textContent = opt;
-      //       el.value = opt;
-      //       select.appendChild(el);
-      // }​
+//       for (var i = 0; i < options.length; i++) {
+//             var opt = options[i];
+//             var val = values[i];
+//             var el = document.createElement("option");
+//             el.textContent = opt;
+//             el.value = val;
+//             select.appendChild(el);
+//       }​
+</script>
 </script>
 <script>
       $(document).ready(function () {
