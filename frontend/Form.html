@@ -1,94 +1,89 @@
-<<<<<<< HEAD
 <html>
-      <head>
-            <!-- jQuery -->
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-            <!-- jQuery Validation Plugin -->
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
-            <!-- Form Validation (JS) -->
-            <script src="js/form-validation.js"></script>
-      </head>
 
-      <body>
-            <div class="container">
-                  <form name='registration 'class="modal-content animate" action="../backend/registerCust.php" method="POST">
+<head>
+      <!-- jQuery -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <!-- jQuery Validation Plugin -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+      <!-- Form Validation (JS) -->
+      <script src="js/form-validation.js"></script>
+      <!-- Stylesheet -->
+      <link rel="stylesheet" type="text/css" href="style.css">
+</head>
 
-            <div class="container">
-                  <label for="CName"><b>Customer Name</b></label>
-                  <input type="text" placeholder="Enter Customer Name" name="CName" maxlength="64" required>
+<body>
+      <div class="container">
+            <form name='registration ' class="modal-content animate" action="../backend/registerCust.php" method="POST">
+
+                  <div class="container">
+                        <label for="CName"><b>Customer Name</b></label>
+                        <input type="text" placeholder="Enter Customer Name" name="CName" maxlength="64"
+                              pattern="[A-Za-z@]{1,64}" required>
                   </div>
-            <div class="container">
-                  <label for="CAge"><b>Customer Age</b></label>
-                  <input type="text" placeholder="Enter Age" name="CAge" required>
-            </div>
-            <div class="container">
-                  <label for="Ser_off_name"><b>Service Officer Name</b></label>
-                  <input type="text" placeholder="Service Officer Name" name="Ser_off_name" maxlength="64" required>
-            </div>
-            <div class="container">
-                  <label for="NRIC"><b>NRIC</b></label>
-                  <input type="text" placeholder="NRIC" name="NRIC" required>
-            </div>
-            <div class="container">     
-                  <label for="regTime"><b>Registration Time</b></label>
-                  <input type="text" placeholder="Enter Customer Name" name="regTime" required>
-            </div>
-            <div class="container">
-                  <label for="branchCode"><b>Branch Code</b></label>
-                  <input type="text" placeholder="Branch Code" name="branchCode" required>
-            </div>
-            <div class="container">
-                  <label for="productType"><b>Product Type</b></label>
-                  <input type="text" placeholder="Product Type" name="productType" required>
-            </div>
-            <div class="container">
-                  <button type="submit">Submit</button>
+                  <div class="container">
+                        <label for="CAge"><b>Customer Age</b></label>
+                        <input type="text" placeholder="Enter Age" name="CAge" pattern="[0-9]{1,3}" required>
+                  </div>
+                  <div class="container">
+                        <label for="Ser_off_name"><b>Service Officer Name</b></label>
+                        <input type="text" placeholder="Service Officer Name" name="Ser_off_name" maxlength="64"
+                              pattern="[A-Za-z@]{1,64}" required>
+                  </div>
+                  <div class="container">
+                        <label for="NRIC"><b>NRIC</b></label>
+                        <input type="text" placeholder="NRIC" name="NRIC" pattern="[A-Z][0-9]{7}[A-Z]" required>
+                  </div>
+                  <!-- Hidden / Based on current computer datetime -->
+                  <div class="container">
+                        <input type="hidden" id="regTime" name="regTime" required>
+                  </div>
+                  <div class="container">
+                        <label for="branchCode"><b>Branch Code</b></label>
+                        <input type="text" placeholder="Branch Code" name="branchCode" required>
+                  </div>
+                  <div class="container">
+                        <label for="productType"><b>Product Type: </b></label>
+                        <!-- <input type="text" placeholder="Product Type" name="productType" required> -->
+                        <select id="productType" name="productType">
+                              <option>Choose a Product Type</option>
+                        </select>
+                  </div>
+                  <!-- <input type='file' />
+            <br><img id="myImg" src="#" alt="your image" height=200 width=100> -->
+                  <div class="container">
+                        <button type="submit">Submit</button>
+                  </div>
 
-            </div>
-
-            <div class="container" style="background-color:#f1f1f1">
-                  <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-            </div>
+                  <div class="container" style="background-color:#f1f1f1">
+                        <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                              class="cancelbtn">Cancel</button>
+                  </div>
             </form>
-            </div>
-      </body>
-</html>
-=======
-<link rel="stylesheet" type="text/css" href="style.css">
- 
-
-<form name='login 'class="modal-content animate" action="/action_page.php">
-
-    <div class="container">
-      <label for="CName"><b>Customer Name</b></label>
-      <input type="text" placeholder="Enter Customer Name" name="CName" required>
       </div>
-<div class="container">
-      <label for="CAge"><b>Customer Age</b></label>
-      <input type="text" placeholder="Enter Age" name="CAge" required>
-</div>
-<div class="container">
-      <label for="Ser_off_name"><b>Service Officer Name</b></label>
-      <input type="text" placeholder="Service Officer Name" name="Ser_off_name" required>
-</div>
-<div class="container">
-      <label for="NRIC"><b>NRIC</b></label>
-      <input type="text" placeholder="NRIC" name="NRIC" required>
-</div>
-<div class="container">     
-      <label for="regTime"><b>Registration Time</b></label>
-      <input type="text" placeholder="Enter Customer Name" name="regTime" required>
-</div>
-<div class="container">
-      <label for="BC"><b>Branch Code</b></label>
-      <input type="text" placeholder="Branch Code" name="Branch Code" required>
-</div>
-<div class="container">
-      <label for="Product Type"><b>Product Type</b></label>
-      <input type="text" placeholder="Product Type" name="Product Type" required>
-</div>	
+</body>
 
-<script type="text/javascript">
+</html>
+
+
+<script>
+      // Registration DateTime
+      var dt = new Date();
+      document.getElementById("regTime").innerHTML = (("0" + dt.getDate()).slice(-2)) + "/" + (("0" + (dt.getMonth() + 1)).slice(-2)) + "/" + (dt.getFullYear()) + " " + (("0" + dt.getHours() + 1).slice(-2)) + ":" + (("0" + dt.getMinutes() + 1).slice(-2)) + ":" + (("0" + dt.getSeconds() + 1).slice(-2));
+
+      // Product Type
+      // var select = document.getElementById("productType");
+      // var options = ["Investor", "Insurance", "Loans", "Savings", "Credit Cards"];
+
+      // for (var i = 0; i < options.length; i++) {
+      //       var opt = options[i];
+      //       var el = document.createElement("option");
+      //       el.textContent = opt;
+      //       el.value = opt;
+      //       select.appendChild(el);
+      // }​
+</script>
+
+<!-- <script type="text/javascript">
 window.addEventListener('load', function() {
   document.querySelector('input[type="file"]').addEventListener('change', function() {
       if (this.files && this.files[0]) {
@@ -103,14 +98,4 @@ function imageIsLoaded() {
   alert(this.src);  // blob url
   // update width and height ...
 }
-</script>
-<input type='file' />
-<br><img id="myImg" src="#" alt="your image" height=200 width=100>
-<div class="container">
-      <button type="submit">Submit</button>
-</div>
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-    </div>
-  </form>
->>>>>>> 3c54080074589725be237001c2d99b76fcb4e765
+</script> -->
