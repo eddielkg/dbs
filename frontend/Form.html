@@ -27,12 +27,29 @@
 <div class="container">
       <label for="Product Type"><b>Product Type</b></label>
       <input type="text" placeholder="Product Type" name="Product Type" required>
-</div>
+</div>	
+
+<script type="text/javascript">
+window.addEventListener('load', function() {
+  document.querySelector('input[type="file"]').addEventListener('change', function() {
+      if (this.files && this.files[0]) {
+          var img = document.querySelector('img');  // $('img')[0]
+          img.src = URL.createObjectURL(this.files[0]); // set src to blob url
+          img.onload = imageIsLoaded;
+      }
+  });
+});
+
+function imageIsLoaded() { 
+  alert(this.src);  // blob url
+  // update width and height ...
+}
+</script>
+<input type='file' />
+<br><img id="myImg" src="#" alt="your image" height=200 width=100>
 <div class="container">
       <button type="submit">Submit</button>
-
-    </div>
-
+</div>
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
     </div>
