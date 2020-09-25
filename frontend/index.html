@@ -31,7 +31,8 @@
                 var pwd = $("input[name='pwd']").val();
                 $.ajax({
                     type: 'POST',
-                    url: 'http://techtrek2020.ap-southeast-1.elasticbeanstalk.com/login',
+                    // url: 'http://techtrek2020.ap-southeast-1.elasticbeanstalk.com/login',
+                    url: 'http://localhost:2020/public/login',
                     data: {
                         username: user,
                         password: pwd

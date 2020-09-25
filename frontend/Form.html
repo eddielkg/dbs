@@ -13,7 +13,7 @@
 
 <body>
       <div class="container">
-            <form name='registration ' class="modal-content animate" action="../backend/registerCust.php" method="POST">
+            <form name='registration ' class="modal-content animate">
 
                   <div class="container">
                         <label for="CName"><b>Customer Name</b></label>
@@ -103,7 +103,8 @@
                   var productType = $("input[name='productType']").val();
                   $.ajax({
                         type: 'POST',
-                        url: 'http://techtrek2020.ap-southeast-1.elasticbeanstalk.com/login',
+                        // url: 'http://techtrek2020.ap-southeast-1.elasticbeanstalk.com/login',
+                        url: 'http://localhost:2020/public/validateForm',
                         data: {
                               customerName: customerName,
                               customerAge: customerAge,
@@ -111,11 +112,14 @@
                               NRIC: NRIC,
                               registrationTime: regTime,
                               branchCode: branchCode,
-                              productType: []
+                              productType: "testProduct"
                   },
                         statusCode: {
+                              200: function () {
+                                    alert('Success');
+                              },
                               400: function () {
-                                    alert('Error: 400 \nMissing username or password.');
+                                    alert('Error: 400 \nMissing fields.');
                               },
                               401: function () {
                                     alert('Error: 401 \nUsername and password does not match.');
@@ -125,7 +129,7 @@
                               }
                         },
                         success: function (response) {
-                              alert('Successful login\n');
+                              alert('Successful validate\n');
                         }
                   });
             });
