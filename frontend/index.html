@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8" />
-
     <title>Login Page</title>
 </head>
 
@@ -17,7 +16,6 @@
         <button>Login</button>
     </div>
     <label>
-
         <input type="checkbox" checked="checked" name="remember"> Remember me
     </label>
     <div>
@@ -51,6 +49,7 @@
                     },
                     success: function (response) {
                         alert('Successful login\n');
+                        location.href = "./form.html"
                         localStorage.setItem('JWT Token', response);
                     }
                 });
